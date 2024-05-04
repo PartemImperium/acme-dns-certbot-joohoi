@@ -1,0 +1,10 @@
+services:
+  certbot-acme-dns:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./vol/etc:/etc/letsencrypt
+      - ./vol/varlib:/var/lib/letsencrypt
+    environment:
+      ACMEDNS_URL: https://auth.acme-dns.io
